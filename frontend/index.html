@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-header">
+            <h1>🐍 Snake Game</h1>
+            <p class="tagline">Play, Compete, Dominate the Leaderboard!</p>
+        </div>
+
+        <div class="auth-container">
+            <!-- Login Form -->
+            <div class="auth-box" id="loginBox">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" name="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="password" required placeholder="Enter your password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <div class="error-message" id="loginError"></div>
+                </form>
+                <p class="switch-form">
+                    Don't have an account?
+                    <a href="#" id="showRegister">Register here</a>
+                </p>
+            </div>
+
+            <!-- Register Form -->
+            <div class="auth-box hidden" id="registerBox">
+                <h2>Register</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerUsername">Username</label>
+                        <input type="text" id="registerUsername" name="username" required placeholder="Choose a username" minlength="3">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" name="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" name="password" required placeholder="Choose a password" minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerConfirmPassword">Confirm Password</label>
+                        <input type="password" id="registerConfirmPassword" name="confirmPassword" required placeholder="Confirm your password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <div class="error-message" id="registerError"></div>
+                </form>
+                <p class="switch-form">
+                    Already have an account?
+                    <a href="#" id="showLogin">Login here</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <span class="feature-icon">🎮</span>
+                <h3>Classic Gameplay</h3>
+                <p>Enjoy the timeless snake game with smooth controls</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🏆</span>
+                <h3>Global Leaderboard</h3>
+                <p>Compete with players worldwide for the top spot</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📊</span>
+                <h3>Track Progress</h3>
+                <p>Monitor your scores and improvement over time</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

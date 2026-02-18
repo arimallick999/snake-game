@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - Play</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="game-page">
+    <div class="game-container">
+        <!-- Header -->
+        <div class="game-header-bar">
+            <h1>🐍 Snake Game</h1>
+            <div class="user-info">
+                <span id="username">Player</span>
+                <button id="logoutBtn" class="btn btn-small">Logout</button>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div class="game-main">
+            <!-- Game Canvas Section -->
+            <div class="game-section">
+                <div class="game-stats">
+                    <div class="stat-box">
+                        <span class="stat-label">Score</span>
+                        <span class="stat-value" id="currentScore">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">High Score</span>
+                        <span class="stat-value" id="highScore">0</span>
+                    </div>
+                </div>
+
+                <div class="canvas-wrapper">
+                    <canvas id="gameCanvas" width="400" height="400"></canvas>
+                    <div class="game-overlay hidden" id="gameOverlay">
+                        <div class="overlay-content">
+                            <h2 id="overlayTitle">Game Over!</h2>
+                            <p id="overlayMessage">Your score: <span id="finalScore">0</span></p>
+                            <button id="restartBtn" class="btn btn-primary">Play Again</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-controls">
+                    <p><strong>Controls:</strong> Use Arrow Keys or WASD to move</p>
+                    <button id="startBtn" class="btn btn-success">Start Game</button>
+                    <button id="pauseBtn" class="btn btn-secondary hidden">Pause</button>
+                </div>
+            </div>
+
+            <!-- Leaderboard Section -->
+            <div class="leaderboard-section">
+                <h2>🏆 Leaderboard</h2>
+                <div class="leaderboard-refresh">
+                    <button id="refreshLeaderboard" class="btn btn-small">Refresh</button>
+                </div>
+                <div id="leaderboardContainer">
+                    <div class="loading">Loading leaderboard...</div>
+                </div>
+
+                <!-- User's Recent Scores -->
+                <div class="user-scores">
+                    <h3>Your Recent Scores</h3>
+                    <div id="userScoresContainer">
+                        <div class="loading">Loading your scores...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3>How to Play</h3>
+            <ul>
+                <li>Use arrow keys or WASD to control the snake</li>
+                <li>Eat the red food to grow and score points</li>
+                <li>Avoid hitting the walls or your own tail</li>
+                <li>Try to beat your high score and top the leaderboard!</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/leaderboard.js"></script>
+</body>
+</html>
