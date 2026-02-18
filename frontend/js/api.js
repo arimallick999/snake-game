@@ -2,8 +2,8 @@
 // This file provides helper functions for making API requests
 // Full implementation will be completed in Phase 3
 
-// API Base URL - Update this when deploying to production
-const API_BASE_URL = 'http://localhost:3001/api';
+// API Base URL - Production backend on Render
+const API_BASE_URL = 'https://snake-game-uk9w.onrender.com/api';
 
 // ==================== HELPER FUNCTIONS ====================
 
