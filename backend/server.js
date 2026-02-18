@@ -22,24 +22,10 @@ connectDB();
 
 // CORS - Allow frontend to communicate with backend
 app.use(cors({
-    origin: function (origin, callback) {
-        // Allow requests with no origin (like mobile apps, curl, or file://)
-        if (!origin) return callback(null, true);
-
-        // Allow all origins in development
-        if (process.env.NODE_ENV !== 'production') {
-            return callback(null, true);
-        }
-
-        // In production, check against FRONTEND_URL
-        const allowedOrigins = [process.env.FRONTEND_URL];
-        if (allowedOrigins.indexOf(origin) !== -1) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true
+    origin: true, // Allow all origins for now
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // Body parser - Parse JSON request bodies
